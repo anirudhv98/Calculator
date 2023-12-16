@@ -26,11 +26,11 @@ function calc(a, b, operator) {
   }
 }
 
-var a = prompt("Enter first number");
-var b = prompt("Enter second number");
-var operator = prompt("Enter operator");
+// var a = prompt("Enter first number");
+// var b = prompt("Enter second number");
+// var operator = prompt("Enter operator");
 
-a = Number(a);
-b = Number(b);
+// a = Number(a);
+// b = Number(b);
 
-calc(a,b,operator);
+// calc(a,b,operator);
