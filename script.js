@@ -1,28 +1,87 @@
+let result = 0;
+let a = 0;
+let b = 0;
+let operator = "+";
+
+let disp = document.querySelector(".display");
+
 function addition(a, b) {
-  console.log(a + b);
+  return a + b;
 }
 
 function subtraction(a, b) {
-  console.log(a - b);
+  return a - b;
 }
 
 function multiplication(a, b) {
-  console.log(a * b);
+  return a * b;
 }
 
 function division(a, b) {
-  console.log(a / b);
+  return a / b;
 }
+
+var nos = document.querySelectorAll(".btn-nos");
+nos.forEach((button) => {
+  button.addEventListener("click", () => {
+    b = b * 10 + parseInt(button.value);
+    disp.textContent = b;
+    console.log("b is " + b);
+  });
+});
+
+var clear = document.querySelector(".clear");
+clear.addEventListener("click", () => {
+  a = 0;
+  b = 0;
+  operator = "";
+  disp.textContent = "";
+});
+
+var del = document.querySelector(".delete");
+del.addEventListener("click", () => {
+  a = 0;
+  b = 0;
+  operator = "+";
+  disp.textContent = "";
+});
+
+var equals = document.querySelector(".equals");
+equals.addEventListener("click", () => {
+  a = calc(a, b, operator);
+  b=0;
+  console.log("Result is " + a);
+  disp.textContent = a;
+  console.log("a = " + a);
+  console.log("b = " + b);
+});
+
+var op = document.querySelectorAll(".btn-operator");
+
+op.forEach((button) => {
+  button.addEventListener("click", () => {
+    operator = button.value;
+    if(a==0)
+    {
+      a = b;
+    }
+    b = 0;
+    console.log("a = " + a);
+    console.log("b = " + b);
+    console.log(operator);
+    disp.textContent = operator;
+  });
+});
 
 function calc(a, b, operator) {
   if (operator === "+") {
-    addition(a, b);
+    return addition(a, b);
   } else if (operator === "-") {
-    subtraction(a, b);
+    return subtraction(a, b);
   } else if (operator === "*") {
-    multiplication(a, b);
+    return multiplication(a, b);
   } else if (operator === "/") {
-    division(a, b);
+    return division(a, b);
   }
 }
 

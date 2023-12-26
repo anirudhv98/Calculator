@@ -6,42 +6,45 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arvo&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <div class="calc-outline">
         <div class="calc">
-          <div class="display">DISPLAY</div>
+          <div class="display"></div>
           <div class="first-row">
             <button class="btn clear">CLEAR</button>
             <button class="btn delete">DELETE</button>
           </div>
           <div class="second-row">
-            <button class="btn btn-seven">7</button>
-            <button class="btn btn-eight">8</button>
-            <button class="btn btn-nine">9</button>
-            <button class="btn btn-divide">/</button>
+            <button class="btn btn-nos" value="7">7</button>
+            <button class="btn btn-nos" value="8">8</button>
+            <button class="btn btn-nos" value="9">9</button>
+            <button class="btn btn-operator" value="/">/</button>
           </div>
           <div class="third-row">
-            <button class="btn btn-four">4</button>
-            <button class="btn btn-five">5</button>
-            <button class="btn btn-six">6</button>
-            <button class="btn btn-multiply">*</button>
+            <button class="btn btn-nos" value="4">4</button>
+            <button class="btn btn-nos" value="5">5</button>
+            <button class="btn btn-nos" value="6">6</button>
+            <button class="btn btn-operator" value="*">*</button>
           </div>
           <div class="fourth-row">
-            <button class="btn btn-one">1</button>
-            <button class="btn btn-two">2</button>
-            <button class="btn btn-three">3</button>
-            <button class="btn btn-subtract">-</button>
+            <button class="btn btn-nos" value="1">1</button>
+            <button class="btn btn-nos" value="2">2</button>
+            <button class="btn btn-nos" value="3">3</button>
+            <button class="btn btn-operator" value="-">-</button>
           </div>
           <div class="fifth-row">
             <button class="btn btn-decimal">.</button>
-            <button class="btn btn-zero">0</button>
-            <button class="btn btn-equal">=</button>
-            <button class="btn btn-add">+</button>
+            <button class="btn btn-nos" value="0">0</button>
+            <button class="btn equals">=</button>
+            <button class="btn btn-operator" value="+">+</button>
           </div>
         </div>
       </div>
