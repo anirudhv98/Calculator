@@ -24,12 +24,20 @@ function division(a, b) {
 var nos = document.querySelectorAll(".btn-nos");
 nos.forEach((button) => {
   button.addEventListener("click", () => {
-    b = b * 10 + parseInt(button.value);
+    b+=button.value;
+    b=parseFloat(b);
+    //b = b * 10 + parseFloat(button.value);
     disp.textContent = b;
     console.log("b is " + b);
   });
 });
 
+var dec = document.querySelector(".decimal");
+dec.addEventListener("click", ()=>
+{
+  b+=".";
+  console.log(b); 
+})
 var clear = document.querySelector(".clear");
 clear.addEventListener("click", () => {
   a = 0;
