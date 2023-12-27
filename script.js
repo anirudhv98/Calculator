@@ -1,7 +1,7 @@
 let result = 0;
 let a = 0;
 let b = 0;
-let operator = "+";
+let operator = "X";
 
 let disp = document.querySelector(".display");
 
@@ -42,7 +42,7 @@ var clear = document.querySelector(".clear");
 clear.addEventListener("click", () => {
   a = 0;
   b = 0;
-  operator = "";
+  operator = "X";
   disp.textContent = "";
 });
 
@@ -68,6 +68,10 @@ var op = document.querySelectorAll(".btn-operator");
 
 op.forEach((button) => {
   button.addEventListener("click", () => {
+    if(operator!='X')
+    {
+      a = calc(a, b, operator);
+    }
     operator = button.value;
     if(a==0)
     {
@@ -90,6 +94,10 @@ function calc(a, b, operator) {
     return multiplication(a, b);
   } else if (operator === "/") {
     return division(a, b);
+  }
+  else 
+  {
+    return 0;
   }
 }
 
