@@ -18,6 +18,11 @@ function multiplication(a, b) {
 }
 
 function division(a, b) {
+  if(b==0)
+  {
+    alert("Bad operation : Division by 0 performed");
+    return 0;
+  }
   return a / b;
 }
 
