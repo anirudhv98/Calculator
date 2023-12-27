@@ -24,8 +24,8 @@ function division(a, b) {
 var nos = document.querySelectorAll(".btn-nos");
 nos.forEach((button) => {
   button.addEventListener("click", () => {
-    b+=button.value;
-    b=parseFloat(b);
+    b += button.value;
+    b = parseFloat(b);
     //b = b * 10 + parseFloat(button.value);
     disp.textContent = b;
     console.log("b is " + b);
@@ -33,11 +33,10 @@ nos.forEach((button) => {
 });
 
 var dec = document.querySelector(".decimal");
-dec.addEventListener("click", ()=>
-{
-  b+=".";
-  console.log(b); 
-})
+dec.addEventListener("click", () => {
+  b += ".";
+  console.log(b);
+});
 var clear = document.querySelector(".clear");
 clear.addEventListener("click", () => {
   a = 0;
@@ -48,16 +47,24 @@ clear.addEventListener("click", () => {
 
 var del = document.querySelector(".delete");
 del.addEventListener("click", () => {
-  a = 0;
-  b = 0;
-  operator = "+";
-  disp.textContent = "";
+  b = b.toString();
+  b = b.substring(0, b.length - 1);
+  if(b=='')
+  {
+    b = 0;
+  }
+  else 
+  {
+    b = parseFloat(b);
+  }
+  disp.textContent = b;
+  
 });
 
 var equals = document.querySelector(".equals");
 equals.addEventListener("click", () => {
   a = calc(a, b, operator);
-  b=0;
+  b = 0;
   console.log("Result is " + a);
   disp.textContent = a;
   console.log("a = " + a);
@@ -68,13 +75,11 @@ var op = document.querySelectorAll(".btn-operator");
 
 op.forEach((button) => {
   button.addEventListener("click", () => {
-    if(operator!='X')
-    {
+    if (operator != "X") {
       a = calc(a, b, operator);
     }
     operator = button.value;
-    if(a==0)
-    {
+    if (a == 0) {
       a = b;
     }
     b = 0;
@@ -94,9 +99,7 @@ function calc(a, b, operator) {
     return multiplication(a, b);
   } else if (operator === "/") {
     return division(a, b);
-  }
-  else 
-  {
+  } else {
     return 0;
   }
 }
