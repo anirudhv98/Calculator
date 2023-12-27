@@ -18,8 +18,7 @@ function multiplication(a, b) {
 }
 
 function division(a, b) {
-  if(b==0)
-  {
+  if (b == 0) {
     alert("Bad operation : Division by 0 performed");
     return 0;
   }
@@ -54,24 +53,21 @@ var del = document.querySelector(".delete");
 del.addEventListener("click", () => {
   b = b.toString();
   b = b.substring(0, b.length - 1);
-  if(b=='')
-  {
+  if (b == "") {
     b = 0;
-  }
-  else 
-  {
+  } else {
     b = parseFloat(b);
   }
   disp.textContent = b;
-  
 });
 
 var equals = document.querySelector(".equals");
 equals.addEventListener("click", () => {
   a = calc(a, b, operator);
   b = 0;
+  operator = "X";
   console.log("Result is " + a);
-  disp.textContent = a;
+  disp.textContent += a;
   console.log("a = " + a);
   console.log("b = " + b);
 });
@@ -81,7 +77,14 @@ var op = document.querySelectorAll(".btn-operator");
 op.forEach((button) => {
   button.addEventListener("click", () => {
     if (operator != "X") {
-      a = calc(a, b, operator);
+      if(button.value == '-')
+      {
+        
+      }
+      else 
+      {
+        a = calc(a, b, operator);
+      }
     }
     operator = button.value;
     if (a == 0) {
@@ -96,6 +99,7 @@ op.forEach((button) => {
 });
 
 function calc(a, b, operator) {
+  disp.textContent = a + " " + operator + " " + b + " = ";
   if (operator === "+") {
     return addition(a, b);
   } else if (operator === "-") {
@@ -108,12 +112,3 @@ function calc(a, b, operator) {
     return 0;
   }
 }
-
-// var a = prompt("Enter first number");
-// var b = prompt("Enter second number");
-// var operator = prompt("Enter operator");
-
-// a = Number(a);
-// b = Number(b);
-
-// calc(a,b,operator);
